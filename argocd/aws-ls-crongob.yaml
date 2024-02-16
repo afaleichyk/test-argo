@@ -7,12 +7,12 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: idt-jenkins
+    namespace: default
     server: https://kubernetes.default.svc
   project: team-devops
   source:
     path: cronjob-andrewf
-    repoURL: git@github.com:coretech/devops-np-k8s-live.git
+    repoURL: git@github.com:afaleichyk/test-argo.git
     targetRevision: HEAD
   syncPolicy:
     syncOptions:

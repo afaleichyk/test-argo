@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: andrewf-cronjob-aws-ls
-  namespace: idt-jenkins
+  namespace: default
 spec:
   concurrencyPolicy: Forbid
   schedule: "35 * * * *"
