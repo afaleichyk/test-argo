@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: kuber
     server: https://kubernetes.default.svc
-  project: test-argo
+  project: default
   source:
     path: cronjob-andrewf
     repoURL: git@github.com:afaleichyk/test-argo.git
