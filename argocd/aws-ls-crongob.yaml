@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: andrewf-cronjob-aws-ls
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: idt-jenkins
+    server: https://kubernetes.default.svc
+  project: team-devops
+  source:
+    path: cronjob-andrewf
+    repoURL: git@github.com:coretech/devops-np-k8s-live.git
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

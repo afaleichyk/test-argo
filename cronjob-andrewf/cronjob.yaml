@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: andrewf-cronjob-aws-ls
+  namespace: idt-jenkins
+spec:
+  concurrencyPolicy: Forbid
+  schedule: "35 * * * *"
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: aws-cli-container
+              image: woahbase/alpine-awscli
+              command:
+                - sh
+                - -c
+                - echo "Hello from Andrew"
+
