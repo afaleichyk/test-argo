@@ -1,2 +1,2 @@
 private-sshkey-secret.yaml
-helm-backstage/backstage/templates/backstage-secrets.yaml
+backstage-secrets.yaml
