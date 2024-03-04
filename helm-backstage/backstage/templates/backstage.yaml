@@ -3,21 +3,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backstage
-  namespace: backstage
+  namespace: {{ .Values.namespace }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: backstage
+      app: {{ .Values.labelsBackstage }}
   template:
     metadata:
       labels:
-        app: backstage
+        app: {{ .Values.labelsBackstage }}
     spec:
       containers:
         - name: backstage
-          image: 833915412828.dkr.ecr.us-east-1.amazonaws.com/test-jenkins:40
-          imagePullPolicy: Never
+          image: "{{ .Values.imageBackstage.repository }}:{{ .Values.imageBackstage.tag }}"
+          imagePullPolicy: {{ .Values.imageBackstage.pullPolicy }}
           ports:
             - name: http
               containerPort: 7007
