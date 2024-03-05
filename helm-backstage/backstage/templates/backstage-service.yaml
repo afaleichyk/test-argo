@@ -6,7 +6,7 @@ metadata:
   namespace: {{ .Values.namespace }}
 spec:
   selector:
-    app: backstage
+    app: {{ .Values.labelsBackstage }}
   ports:
     - name: http
       port: 80
