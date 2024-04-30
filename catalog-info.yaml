@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test-argo
+  annotations:
+    github.com/project-slug: afaleichyk/test-argo
+spec:
+  type: other
+  lifecycle: unknown
+  owner: afaleichyk-maintainers
