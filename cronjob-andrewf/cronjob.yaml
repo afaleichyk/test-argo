@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: andrewf-cronjob-aws-ls
+  name: andrewf-cronjob-aws-ls-1
   namespace: kuber
 spec:
   concurrencyPolicy: Forbid
